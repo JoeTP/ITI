@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1733585732 source:d:\iti\datastructure\lab\lab 3\merge sort\main.cpp
+	<iostream>
+	<string.h>
+	<ctype.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1729840086 source:d:\iti\labs\oop using c++\lab4\check array equality\main.cpp
+	<iostream>
+	<string.h>
+	<ctype.h>
+

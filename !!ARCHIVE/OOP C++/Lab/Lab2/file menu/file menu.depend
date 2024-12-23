@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1729954818 source:d:\iti\labs\oop using c++\lab2\file menu\main.cpp
+	<iostream>
+	<cstdio>
+

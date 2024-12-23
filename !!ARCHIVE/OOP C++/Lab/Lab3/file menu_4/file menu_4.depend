@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1729835535 source:d:\iti\labs\oop using c++\labs\lab3\file menu_4\main.cpp
+	<iostream>
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	<cmath>
+

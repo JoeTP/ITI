@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1729785279 source:d:\iti\labs\oop using c++\labs\lab4\student degrees\main.cpp
+	<iostream>
+	<string.h>
+	<ctype.h>
+	<iomanip>
+

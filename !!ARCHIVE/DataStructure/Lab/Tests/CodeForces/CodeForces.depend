@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1734087536 source:d:\iti\datastructure\lab\tests\codeforces\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+	<stack>
+	<string>
+	<stdio.h>
+	<conio.h>
+	<queue>
+	<map>
+

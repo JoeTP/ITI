@@ -1,0 +1,97 @@
+
+
+p ,div , span{
+    font-family: 'Lucida Sans';
+}
+
+div h1  {
+    text-align:  center;
+}
+
+.non-bullet-list {
+    list-style-type: none;
+}
+
+a{
+    background-color: pink;
+    color: red;
+    text-decoration: none;
+    
+}
+
+a:hover {
+    
+    background-color: red;
+    color: pink;
+}
+
+span h2 {
+    font-weight: bold;
+    font-size: 12ps;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#loginform{
+    border: 2px dashed rgb(20, 70, 60);
+}
+
+input[type="text"] {
+    background-color: yellow;
+}
+
+input[type="text"]:focus {
+    background-color: white;
+}
+
+.tabled-bordered{
+    display: table-cell;
+    padding: 5;
+    border: solid;
+}
+
+#aboutus{ 
+    color: red !important;
+}
+
+
+#aboutus{ 
+    color: yellow;
+}
+
+.button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+.menu {
+    display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+/* Change color of dropdown links on hover */
+.menu a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .menu {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .button {background-color: #3e8e41;}

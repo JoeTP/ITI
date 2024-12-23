@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1732979160 source:d:\iti\datastructure\lab\test\main.cpp
+	<iostream>
+	<string.h>
+
+1733581078 source:d:\iti\datastructure\lab\tests\stack - linked list\main.cpp
+	<iostream>
+	<string.h>
+

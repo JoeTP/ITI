@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1730294275 source:d:\iti\labs\oop using c++\lab5\proj2\main.cpp
+	<iostream>
+	<stdio.h>
+	<conio.h>
+	<string.h>
+	<ctype.h>
+	<windows.h>
+

@@ -66,6 +66,11 @@
               <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="About" />
             </items>
           </Menu>
+          <Menu fx:id="testingMenu" mnemonicParsing="false" text="TEST MENU">
+            <items>
+              <MenuItem fx:id="testingMenuItem" mnemonicParsing="false" text="TEST" />
+            </items>
+          </Menu>
         </menus>
       </MenuBar>
    </top>

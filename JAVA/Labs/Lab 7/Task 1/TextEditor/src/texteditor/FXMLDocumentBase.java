@@ -15,13 +15,12 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.Dialog;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
-import javafx.scene.input.Clipboard;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.input.KeyCode;
@@ -31,14 +30,14 @@ import javafx.stage.Stage;
 
 public class FXMLDocumentBase extends BorderPane {
 
-    protected final MenuBar editMenu;
+    protected final MenuBar menuBar;
     protected final Menu fileMenu;
     protected final MenuItem openLowMenuItem;
     protected final MenuItem openHighMenuItem;
     protected final MenuItem saveLowMenuItem;
     protected final MenuItem saveHighMenuItem;
     protected final MenuItem closeMenuItem;
-    protected final Menu menu;
+    protected final Menu editMenu;
     protected final MenuItem cutMenuItem;
     protected final MenuItem copyMenuItem;
     protected final MenuItem pasteMenuItem;
@@ -46,19 +45,20 @@ public class FXMLDocumentBase extends BorderPane {
     protected final Menu helpMenu;
     protected final MenuItem aboutMenuItem;
     protected final TextArea textArea;
-    Stage myStage;
-
+    protected Stage myStage;
+    
+    
     public FXMLDocumentBase(Stage stage) {
 
         myStage = stage;
-        editMenu = new MenuBar();
+        menuBar = new MenuBar();
         fileMenu = new Menu();
         openLowMenuItem = new MenuItem();
         openHighMenuItem = new MenuItem();
         saveLowMenuItem = new MenuItem();
         saveHighMenuItem = new MenuItem();
         closeMenuItem = new MenuItem();
-        menu = new Menu();
+        editMenu = new Menu();
         cutMenuItem = new MenuItem();
         copyMenuItem = new MenuItem();
         pasteMenuItem = new MenuItem();
@@ -74,7 +74,7 @@ public class FXMLDocumentBase extends BorderPane {
         setPrefHeight(400.0);
         setPrefWidth(600.0);
 
-        BorderPane.setAlignment(editMenu, javafx.geometry.Pos.CENTER);
+        BorderPane.setAlignment(menuBar, javafx.geometry.Pos.CENTER);
 
         fileMenu.setMnemonicParsing(false);
         fileMenu.setText("File");
@@ -101,8 +101,6 @@ public class FXMLDocumentBase extends BorderPane {
                     } catch (IOException ex) {
                         Logger.getLogger(FXMLDocumentBase.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                } else {
-
                 }
             }
         });
@@ -127,9 +125,7 @@ public class FXMLDocumentBase extends BorderPane {
                     } catch (IOException ex) {
                         Logger.getLogger(FXMLDocumentBase.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                } else {
-
-                }
+                } 
             }
         });
 
@@ -153,8 +149,6 @@ public class FXMLDocumentBase extends BorderPane {
                     } catch (IOException ex) {
                         Logger.getLogger(FXMLDocumentBase.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                } else {
-
                 }
 
             }
@@ -182,8 +176,7 @@ public class FXMLDocumentBase extends BorderPane {
                         Logger.getLogger(FXMLDocumentBase.class.getName()).log(Level.SEVERE, null, ex);
                     }
 
-                } else {
-                }
+                } 
 
             }
         });
@@ -198,8 +191,8 @@ public class FXMLDocumentBase extends BorderPane {
             }
         });
 
-        menu.setMnemonicParsing(false);
-        menu.setText("Edit");
+        editMenu.setMnemonicParsing(false);
+        editMenu.setText("Edit");
 
         cutMenuItem.setMnemonicParsing(false);
         cutMenuItem.setText("Cut");
@@ -242,48 +235,44 @@ public class FXMLDocumentBase extends BorderPane {
 
         helpMenu.setMnemonicParsing(false);
         helpMenu.setText("Help");
-        helpMenu.setOnAction(new EventHandler<ActionEvent>() {
-            Button bt = new Button("OK");
-
-            @Override
-            public void handle(ActionEvent event) {
-                Alert dialog = new Alert(Alert.AlertType.INFORMATION, "VERSION 1.0", ButtonType.CLOSE);
-                dialog.setContentText("THIS IS HELP!");
-                dialog.setTitle("Help");
-                dialog.show();
-                dialog.setGraphic(bt);
-                
-                bt.setOnAction(new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(ActionEvent event) {
-                        dialog.close();
-                    }
-                });
-            }
-        });
 
         aboutMenuItem.setMnemonicParsing(false);
         aboutMenuItem.setText("About");
-        setTop(editMenu);
+        aboutMenuItem.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                ButtonType btn = new ButtonType("OK", ButtonBar.ButtonData.OTHER);
+                Alert dialog = new Alert(Alert.AlertType.NONE, "",btn);
+                String alertContent = "Version 1.0\nCreated By: Youssif Nasser \nSubmitted on 24/12/2024 \nITI 9 Month Program";
+                dialog.setContentText(alertContent);
+                dialog.setTitle("About");
+                dialog.show();
+            }
+        });
+        
+        setTop(menuBar);
 
         BorderPane.setAlignment(textArea, javafx.geometry.Pos.CENTER);
         textArea.setPrefHeight(200.0);
         textArea.setPrefWidth(200.0);
         setCenter(textArea);
+        
+        
 
         fileMenu.getItems().add(openLowMenuItem);
         fileMenu.getItems().add(openHighMenuItem);
         fileMenu.getItems().add(saveLowMenuItem);
         fileMenu.getItems().add(saveHighMenuItem);
         fileMenu.getItems().add(closeMenuItem);
-        editMenu.getMenus().add(fileMenu);
-        menu.getItems().add(cutMenuItem);
-        menu.getItems().add(copyMenuItem);
-        menu.getItems().add(pasteMenuItem);
-        menu.getItems().add(deleteMenuItem);
-        editMenu.getMenus().add(menu);
+        menuBar.getMenus().add(fileMenu);
+        
+        editMenu.getItems().add(cutMenuItem);
+        editMenu.getItems().add(copyMenuItem);
+        editMenu.getItems().add(pasteMenuItem);
+        editMenu.getItems().add(deleteMenuItem);
+        menuBar.getMenus().add(editMenu);
+        
         helpMenu.getItems().add(aboutMenuItem);
-        editMenu.getMenus().add(helpMenu);
-
+        menuBar.getMenus().add(helpMenu);
     }
 }
